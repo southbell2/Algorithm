@@ -1,33 +1,30 @@
 public class Combination {
-    public static void main(String[] args) {
-        int n = 4;
-        int[] arr = {1, 2, 3, 4};
-        boolean[] visited = new boolean[n];
-
-        for (int i = 1; i <= n; i++) {
-            combination(arr, visited, 0, n, i);
-        }
-    }
-
-    static void combination(int[] arr, boolean[] visited, int start, int n, int r) {
+    static void combination(int[] arr, boolean[] visited, int start, int r) {
+        //원하는 만큼 뽑았으면 할것들을 처리한다 여기선 print함수
         if (r == 0) {
-            print(arr, visited, n);
+            print(arr, visited);
             return;
         }
-
-        for (int i = start; i < n; i++) {
+        //재귀적으로 조합을 뽑는다
+        for (int i = start; i < arr.length; i++) {
             visited[i] = true;
-            combination(arr, visited, i + 1, n, r - 1);
+            combination(arr, visited, i + 1, r - 1);
             visited[i] = false;
         }
     }
 
-    static void print(int[] arr, boolean[] visited, int n) {
-        for (int i = 0; i < n; i++) {
+    static void print(int[] arr, boolean[] visited) {
+        for (int i = 0; i < visited.length; i++) {
             if (visited[i]) {
                 System.out.print(arr[i] + " ");
             }
         }
         System.out.println();
     }
+  
+  public static void main(String args[]) { 
+    int[] arr = {1,2,3,4,5};
+    boolean[] visited = new boolean[arr.length];
+    combination(arr,visited,0,3);
+  } 
 }
