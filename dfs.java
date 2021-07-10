@@ -28,7 +28,7 @@ class Solution {
         
         return answer;
     }
-    
+    //
     public boolean dfs(int r, int c, int[][] picture, int number){
         if(r < 0 || picture.length <= r || c < 0 || picture[0].length <= c){
             return false;
