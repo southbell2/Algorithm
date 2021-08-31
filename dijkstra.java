@@ -20,6 +20,7 @@ public class Main {
     public static ArrayList<ArrayList<Node>> graph = new ArrayList<ArrayList<Node>>();
     // 최단 거리 테이블 만들기
     public static int[] d = new int[100001];
+    public static boolean[] visited = new boolean[100001];
 
     public static void dijkstra(int start) {
         PriorityQueue<Node> pq = new PriorityQueue<>((node1, node2) -> node1.distance - node2.distance);
@@ -31,8 +32,9 @@ public class Main {
             Node node = pq.poll();
             int dist = node.distance; // 현재 노드까지의 비용
             int now = node.index; // 현재 노드
-            // 현재 노드가 이미 처리된 적이 있는 노드라면 무시
-            if (d[now] < dist) continue;
+            //방문 했던 노드면 continue
+            if(visited[now]) continue;
+            visited[now] = true;
             // 현재 노드와 연결된 다른 인접한 노드들을 확인
             for (int i = 0; i < graph.get(now).size(); i++) {
                 int cost = d[now] + graph.get(now).get(i).distance;
