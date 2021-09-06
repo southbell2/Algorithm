@@ -6,7 +6,7 @@ private static int lowerBound(List<Integer> data, int target) {
     while(start < end) {
     	int mid = (start + end) / 2;
         
-        if(data.get(mid) >= target) {
+        if(target <= data.get(mid)) {
         	end = mid;
         }
         else {
