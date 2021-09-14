@@ -24,11 +24,11 @@ private static int upperBound(List<Integer> data, int target) {
     while(start < end) {
     	int mid = (start + end) / 2;
         
-        if(data.get(mid) <= target) {
-        	start = mid + 1;
+        if(target < data.get(mid)) {
+        	end = mid;
         }
         else {
-        	end = mid;
+        	start = mid + 1;
         }
     }
     return end;
