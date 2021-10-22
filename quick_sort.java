@@ -5,6 +5,7 @@ public static void quickSort(int start, int end, int[] arr) {
     int left = start;
     int right = end;
     while (left < right) {
+        //right을 먼저 줄여줘야 한다 그래야 left == right 이 될때 arr[left] <= pivot을 만족
         while (pivot < arr[right] && left < right) {
             right--;
         }
