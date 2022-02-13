@@ -1,5 +1,5 @@
 //lower bound 구하기, 특정 target보다 크거나 같은 첫번째 원소의 index를 리턴한다
-private static int lowerBound(List<Integer> data, int target) {
+public static int lowerBound(List<Integer> data, int target) {
     int start = 0;
     int end = data.size();
     
@@ -17,7 +17,7 @@ private static int lowerBound(List<Integer> data, int target) {
 }
 
 //upper bound 구하기, 특정 target보다 큰 첫번째 원소의 index를 리턴한다
-private static int upperBound(List<Integer> data, int target) {
+public static int upperBound(List<Integer> data, int target) {
     int start = 0;
     int end = data.size();
     
