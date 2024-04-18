@@ -1,6 +1,6 @@
 //유클리드 호제법을 이용한 최대공약수와 최소공배수 구하기
 
-public int gdc(int a, int b) {
+public int gcd(int a, int b) {
     if(a < b) {
         int temp = a;
         a = b;
