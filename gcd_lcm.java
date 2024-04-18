@@ -12,8 +12,8 @@ public int gdc(int a, int b) {
         b = r;
     }
     return a;
-  }
+}
   
-  public int lcm(int a, int b) {
+public int lcm(int a, int b) {
     return a*b / gdc(a,b);
 }
